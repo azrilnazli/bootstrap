@@ -10,8 +10,8 @@ const MovieCard = (props) => {
     const navigate = useNavigate();
     
         // var e is event handler
-        function handleClick(e) {
-            var id = e.target.value;
+        function handleClick(id) {
+            //var id = e.target.value;
             navigate('/movie/' + id + '/play');
         
         }
@@ -27,7 +27,8 @@ const MovieCard = (props) => {
           <Button 
           variant="primary"
           value={props.id}
-          onClick={handleClick} // handleClick executed
+          //onClick={handleClick} // handleClick executed
+          onClick={() => handleClick(props.id)}
           >
               <i class="fa fa-play text-light"></i> Play
           </Button>
